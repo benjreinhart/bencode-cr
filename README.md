@@ -21,10 +21,10 @@ end
 require "bencode"
 ```
 
-### Bencode#encode(s : String)
-### Bencode#encode(i : Bencode::Integers)
-### Bencode#encode(l : Bencode::List)
-### Bencode#encode(d : Bencode::Dictionary)
+#### Bencode#encode(s : String) : String
+#### Bencode#encode(i : Bencode::Integers) : String
+#### Bencode#encode(l : Bencode::List) : String
+#### Bencode#encode(d : Bencode::Dictionary) : String
 
 
 ```crystal
@@ -34,11 +34,11 @@ Bencode.encode(["str", 123])         # => "l3:stri123ee"
 Bencode.encode({ "key" => "value" }) # => "d3:key5:valuee"
 ```
 
-### Bencode#decode(s : String) : Bencode::Type?
+#### Bencode#decode(s : String) : Bencode::Type?
 
 ```crystal
-# Invalid dictionary:
-Bencode.decode("di4e5:valuee") # => nil 
+Bencode.decode("") # => nil
+Bencode.decode("di4e5:valuee") # => nil (invalid dictionary)
 Bencode.decode("d3:key5:valuee") # => { "key" => "value" }
 ```
 
