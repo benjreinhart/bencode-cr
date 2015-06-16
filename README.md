@@ -22,15 +22,26 @@ require "bencode"
 ```
 
 #### Bencode#encode(s : String) : String
-#### Bencode#encode(i : Bencode::Integers) : String
-#### Bencode#encode(l : Bencode::List) : String
-#### Bencode#encode(d : Bencode::Dictionary) : String
-
 
 ```crystal
-Bencode.encode("string")             # => "6:string"
-Bencode.encode(123)                  # => "i123e"
-Bencode.encode(["str", 123])         # => "l3:stri123ee"
+Bencode.encode("string") # => "6:string"
+```
+
+#### Bencode#encode(i : Bencode::Integers) : String
+
+```crystal
+Bencode.encode(123) # => "i123e"
+```
+
+#### Bencode#encode(l : Bencode::List) : String
+
+```crystal
+Bencode.encode(["str", 123]) # => "l3:stri123ee"
+```
+
+#### Bencode#encode(d : Bencode::Dictionary) : String
+
+```crystal
 Bencode.encode({ "key" => "value" }) # => "d3:key5:valuee"
 ```
 
