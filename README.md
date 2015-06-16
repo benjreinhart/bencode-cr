@@ -1,4 +1,4 @@
-# bencode
+# Bencode
 
 Solution for encoding and decoding the Bencode format in the [Crystal language](http://crystal-lang.org).
 
