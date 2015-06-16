@@ -64,7 +64,7 @@ describe Bencode do
               "one",
               2,
               { "key" => "value" } of String => Bencode::Type
-            ] of Bencode::Type,
+            ] of Bencode::Type
           } of String => Bencode::Type,
           120
         ]
